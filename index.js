@@ -1,6 +1,7 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var port = process.env.PORT || 3000;
 
 var userList = [];
 var typingUsers = {};
@@ -10,8 +11,8 @@ app.get('/', function(req, res){
 });
 
 
-http.listen(3000, function(){
-  console.log('Listening on *:3000');
+http.listen(port, function(){
+  console.log('Listening on *:port');
 });
 
 
